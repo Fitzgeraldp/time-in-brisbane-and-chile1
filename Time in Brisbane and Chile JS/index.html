@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>Time in Brisbane, Australia and Chile</h1>
+
+    <button type="button" onclick="showTimes()">Click on me and see the date time.</button>
+
+    <div id="timeDisplay" style="margin-top: 20px; font-size: 1.2em;"></div>
+
+    <footer>
+        <p>&copy; 2025 Patrick John Fitzgerald</p>
+    </footer>
+
+    <script>
+
+        function showTimes() {
+            const now = new Date();
+
+            const aestTime = now.toLocaleString("en-AU", {
+                timeZone: "Australia/Brisbane",
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+                hour12: false
+            });
+
+            const chileTime = now.toLocaleString("es-CL", {
+                timeZone: "America/Santiago",
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+                hour12: false
+            });
+
+            document.getElementById("timeDisplay").innerHTML = `
+  <strong>AEST (Australia/Brisbane):</strong> ${aestTime}<br>
+  <strong>Chile (America/Santiago):</strong> ${chileTime}
+`;
+        }
+    </script>
+
+</body>
+
+</html>
